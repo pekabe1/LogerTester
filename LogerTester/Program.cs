@@ -13,15 +13,28 @@ namespace LogerTester
         static void Main(string[] args)
         {
         
-            var logger = new AppLogger(@"D:\texty.txt");
-            //logger.Save();
-            string [] text = { "test1", "test2" };
-            logger.Write(" Text");
-            logger.Write(text);
-            logger.Write(" test text IOIOIOIOIIOIOIOOIO");
+            var logger = new AppLogger(@"D:\Logs");
+            //Info
+            //Warning
+            //Errors
+            //2019_09_23_18_23.text
+            // zalowoano info
+
+            logger.SaveDirecotry(@"D:\");
+            
+            logger.Info(@"Zalogownao info...");
+
+            //try
+            //{
+            //    logger.Warning(@"Zalgowano waring...")
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    logger.Error(ex.Message);
+            //}
 
             Console.Read();
-
         }
     }
 }

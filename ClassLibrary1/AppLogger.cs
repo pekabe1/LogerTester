@@ -9,7 +9,9 @@ namespace AppLoggers
 {
 
     public class AppLogger
+
     {
+         #region 
         private readonly string path;
         public AppLogger(string path)
         {
@@ -25,6 +27,10 @@ namespace AppLoggers
             {
                 throw new Exception("Type new file name");
             }
+        }
+        public void Save(string path)
+        {
+            path = this.path;
         }
 
         public void Write( string text)
@@ -42,7 +48,31 @@ namespace AppLoggers
             {
                 Directory.CreateDirectory(dir);
             }
+            for (int i = 0; i < 5; i++)
+            {
+                string path = Path.Combine(dir, $"{i}.txt");
+                Save(path);
+            }
         }
+
+        public void RemoveFile(string path = null)
+
+        {
+            if (path != null)
+            {
+                File.Delete(path);
+                return;
+            }
+            File.Delete(this.path);
+        }
+        public void Info(string text)
+        {
+
+        }
+        
+
+        //info warkinng error data/czas
+
 
     }
 }
