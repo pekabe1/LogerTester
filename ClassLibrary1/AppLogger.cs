@@ -14,6 +14,11 @@ namespace AppLoggers
             if (!File.Exists(path))
             {
                 File.Create(path).Close();
+
+            }
+            else
+            {
+                throw new Exception("Type new name");
             }
             
             
