@@ -13,8 +13,13 @@ namespace LogerTester
         static void Main(string[] args)
         {
         
-            var logger = new AppLogger();
-            logger.Save(@"D:\texty.txt");
+            var logger = new AppLogger(@"D:\texty.txt");
+            //logger.Save();
+            string [] text = { "test1", "test2" };
+            logger.Write(" Text");
+            logger.Write(text);
+            logger.Write(" test text IOIOIOIOIIOIOIOOIO");
+
             Console.Read();
 
         }
